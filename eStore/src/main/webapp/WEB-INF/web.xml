@@ -32,4 +32,35 @@
     <url-pattern>/LoginServlet</url-pattern>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegisterServlet</display-name>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.eStore.Controller.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/RegisterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegistersServlet</display-name>
+    <servlet-name>RegistersServlet</servlet-name>
+    <servlet-class>RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegistersServlet</servlet-name>
+    <url-pattern>/RegistersServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegistServlet</display-name>
+    <servlet-name>RegistServlet</servlet-name>
+    <servlet-class>RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegistServlet</servlet-name>
+    <url-pattern>/RegistServlet</url-pattern>
+    <url-pattern>/Register</url-pattern>
+  </servlet-mapping>
 </web-app>

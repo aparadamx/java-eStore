@@ -25,7 +25,8 @@ public class LoginServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	/*
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String email = request.getParameter("txtEmail");
 		String password = request.getParameter("txtPassword");
@@ -40,5 +41,43 @@ public class LoginServlet extends HttpServlet {
 		out.print(htmlResponse);
 		
 	}
+	*/
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	// TODO Auto-generated method stub
+    	//super.doGet(request, response);
+    	
+		// TODO Auto-generated method stub
+		String email = request.getParameter("txtEmail");
+		String password = request.getParameter("txtPassword");
+		
+		System.out.println("user Details : " + email + " " + password);
+		
+		response.setContentType("text/html");
+		java.sql.Date loginTimeStamp = new java.sql.Date(0);
+		String htmlResponse = "<center><h3>Welcome " + email + "<h3><p>You Loggedin at" + loginTimeStamp.toString()+"</p></center>";
+		
+		PrintWriter out =response.getWriter();
+		out.print(htmlResponse);
+    }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	// TODO Auto-generated method stub
+    	//super.doPost(req, resp);
+    	
+		String email = request.getParameter("txtEmail");
+		String password = request.getParameter("txtPassword");
+		
+		System.out.println("user Details : " + email + " " + password);
+		
+		response.setContentType("text/html");
+		java.sql.Date loginTimeStamp = new java.sql.Date(0);
+		String htmlResponse = "<center><h3>Welcome " + email + "<h3><p>You Loggedin at" + loginTimeStamp.toString()+"</p></center>";
+		
+		PrintWriter out =response.getWriter();
+		out.print(htmlResponse);
+    }
 
 }
