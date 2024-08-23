@@ -9,6 +9,10 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <context-param>
+    <param-name>dbURL</param-name>
+    <param-value>jdbc:mysql://localhost/store</param-value>
+  </context-param>
   <servlet>
     <description></description>
     <display-name>HelloServlet</display-name>
@@ -63,4 +67,61 @@
     <url-pattern>/RegistServlet</url-pattern>
     <url-pattern>/Register</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FrontController</display-name>
+    <servlet-name>FrontController</servlet-name>
+    <servlet-class>com.eStore.Controller.FrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FrontController</servlet-name>
+    <url-pattern>/FrontController</url-pattern>
+    <url-pattern>/Front</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <display-name>LoginFilter</display-name>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>/LoginFilter</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProductController</display-name>
+    <servlet-name>ProductController</servlet-name>
+    <servlet-class>com.eStore.Controller.ProductController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductController</servlet-name>
+    <url-pattern>/ProductController</url-pattern>
+    <url-pattern>/Product</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserServlet</display-name>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>com.eStore.Controller.UserServlet</servlet-class>
+    <init-param>
+      <param-name>accessToken</param-name>
+      <param-value>1200AB9A</param-value>
+    </init-param>
+    <init-param>
+      <param-name>memoryUsageThresholds</param-name>
+      <param-value>16</param-value>
+    </init-param>
+    <init-param>
+      <param-name>appName</param-name>
+      <param-value>eStore - web App</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/UserServlet</url-pattern>
+    <url-pattern>/User</url-pattern>
+  </servlet-mapping>
+  <listener>
+    <listener-class>com.eStore.Controller.MyAppListener</listener-class>
+  </listener>
 </web-app>
